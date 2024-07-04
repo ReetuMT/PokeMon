@@ -64,9 +64,9 @@ Nav {
   display: flex;
   /* flex-wrap: space-between; */
   gap: 1rem;
-  justify-content: space-between;
-  align-content: center;
-  width: 30%;
+  justify-content: space-around;
+  align-items: center;
+  width: 40%;
   background-color: #25b09b;
   border-radius: 20px;
   padding: 10px;
@@ -130,6 +130,18 @@ Nav {
 .img_list img:hover{
   transform: scale(1.5);
 }
-/* .card-container{
+.cards-container{
   display: flex;
-} */
+  justify-content: space-around;
+  padding: 10px;
+}
+.barcharts{
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 25px;
+  text-align: center;
+  color: whi;
+}
+.barcharts:hover{
+  background-color: #86e9da;
+}

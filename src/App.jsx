@@ -5,6 +5,7 @@ import Mains from './Mains';
 import PokemonCards from './Component/PokemonCards';
 import Navbar from './Component/Navbar';
 
+
 function App() {
   return (
     <BrowserRouter>
