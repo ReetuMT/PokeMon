@@ -1,20 +1,21 @@
 
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Mains from './Mains';
-import PokemonCards from './Component/PokemonCards';
-import Navbar from './Component/Navbar';
-
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Navbar from './Component/Navbar'
+import PokemonCards from './Component/PokemonCards'
+import Mains from './Mains'
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
         <Route path="/PokeMon" element={<Mains />} />
-        <Route path="/pokemon/:id" element={<PokemonCards />} />
-      </Routes>
-    </BrowserRouter>
+          <Route path="/pokemon/:id" element={<PokemonCards />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

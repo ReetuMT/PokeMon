@@ -80,14 +80,23 @@ function PokemonCards() {
     },
   };
 
+  const imagesPool = [
+    { src: pokemon?.sprites?.front_default, alt: 'Front Default' },
+    { src: pokemon?.sprites?.back_default, alt: 'Back Default' },
+    { src: pokemon?.sprites?.back_shiny, alt: 'Back Shiny' },
+    { src: pokemon?.sprites?.back_shiny_female, alt: 'Back Shiny Female' },
+    { src: pokemon?.sprites?.front_female, alt: 'Front Female' },
+    { src: pokemon?.sprites?.front_shiny, alt: 'Front Shiny' },
+    { src: pokemon?.sprites?.front_shiny_female, alt: 'Front Shiny Female' }
+  ];
   if (loading) return <div className="loader"></div>;
 
   return (
     pokemon && (
-      <div>
-        <h1 style={{ textAlign: 'center' }}>{pokemon.name}</h1>
+      <div style={{backgroundColor:'#ddd'}}>
+        <h1 style={{ textAlign: 'center' ,fontFamily:'Tahoma,sans-serif'}}>{pokemon.name}</h1>
         <div className="cards-container">
-          {/* Pokemon Cards */}
+          {/* this div creates Pokemon Cards */}
           <div className='card'>
             <div className="sprites">
               {pokemon.sprites.front_default && <img src={pokemon.sprites.front_default} alt="Front Default" />}
@@ -104,6 +113,7 @@ function PokemonCards() {
               ))}
             </div>
           </div>
+          {/* this card creates Bar chart */}
           <div className='barcharts' style={{ width: "40%" }}>
             <h1>Stats</h1>
             <Bar data={chartData} options={options} />
@@ -112,13 +122,10 @@ function PokemonCards() {
         <div>
           <h3 style={{ textAlign: 'center', textDecoration: 'underline', fontSize: 19, fontFamily: 'sans-serif' }}>IMAGES</h3>
           <div className='img_list'>
-            {pokemon.sprites.front_default && <img src={pokemon.sprites.front_default} alt="Front Default" />}
-            {pokemon.sprites.back_default && <img src={pokemon.sprites.back_default} alt="Back Default" />}
-            {pokemon.sprites.back_shiny && <img src={pokemon.sprites.back_shiny} alt="Back Shiny Default" />}
-            {pokemon.sprites.back_shiny_female && <img src={pokemon.sprites.back_shiny_female} alt="Back Shiny Female" />}
-            {pokemon.sprites.front_female && <img src={pokemon.sprites.front_female} alt="Front Female" />}
-            {pokemon.sprites.front_shiny && <img src={pokemon.sprites.front_shiny} alt="Front Shiny" />}
-            {pokemon.sprites.front_shiny_female && <img src={pokemon.sprites.front_shiny_female} alt="Front Shiny Female" />}
+          {imagesPool.map((image, index) => 
+              image.src && <img key={index} src={image.src} alt={image.alt} />
+            )}
+            
           </div>
         </div>
       </div>

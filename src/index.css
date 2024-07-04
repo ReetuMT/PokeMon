@@ -1,19 +1,13 @@
-a {
-
-  font-family: cursive;
-  color: burlywood;
-  text-shadow: 2px 2px #FF0000;
-  font-size: 30px;
-}
-
-Nav {
+.navbar {
   margin-bottom: 2rem;
-  box-shadow: 16px 35px 24px -3px rgba(0, 0, 0, 0.1), 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-
 .loader {
   width: 50px;
+  margin-left: 650px;
+  margin-top: 200px;
   aspect-ratio: 1;
   display: flex;
   align-items: center;
@@ -45,12 +39,6 @@ Nav {
   }
 }
 
-.buttons {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-
-}
 
 .cards {
   display: flex;
@@ -144,4 +132,16 @@ Nav {
 }
 .barcharts:hover{
   background-color: #86e9da;
+}
+input{
+  border: none;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 6px;
+  margin: 0px 10px 0px 10px;
+}
+form i{
+  padding: 8px;
+  margin: 0px 20px 0px 0px;
+  cursor: pointer;
 }
